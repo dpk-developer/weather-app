@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar renders correctly and handles input 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "white",
+        "borderRadius": 8,
+        "elevation": 5,
+        "flexDirection": "row",
+        "height": 54,
+        "margin": 16,
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 3,
+          "width": 0,
+        },
+        "shadowOpacity": 0.1,
+        "shadowRadius": 4,
+      },
+      {
+        "backgroundColor": "#fff",
+      },
+    ]
+  }
+>
+  <TextInput
+    onChangeText={
+      [MockFunction] {
+        "calls": [
+          [
+            "Paris",
+          ],
+        ],
+        "results": [
+          {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    placeholder="Enter city"
+    placeholderTextColor="#888"
+    style={
+      [
+        {
+          "borderBottomLeftRadius": 8,
+          "borderTopLeftRadius": 8,
+          "flex": 1,
+          "fontSize": 16,
+          "fontWeight": "500",
+          "paddingLeft": 8,
+        },
+        {
+          "backgroundColor": "#eee",
+          "color": "#000",
+        },
+      ]
+    }
+    value="London"
+  />
+  <View
+    accessibilityRole="button"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#333",
+        "borderBottomRightRadius": 8,
+        "borderTopRightRadius": 8,
+        "justifyContent": "center",
+        "opacity": 1,
+        "width": 60,
+      }
+    }
+    testID="search-button"
+  >
+    <Image
+      source={
+        {
+          "testUri": "../../../src/assets/icons/search.png",
+        }
+      }
+      style={
+        [
+          {
+            "height": 24,
+            "width": 24,
+          },
+          {
+            "tintColor": "#fff",
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;

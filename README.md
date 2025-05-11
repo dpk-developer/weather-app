@@ -1,97 +1,141 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📱 WeatherApp
 
-# Getting Started
+A scalable React Native Weather App built with **TypeScript**, **Redux Toolkit**, **MVVM architecture**, **Dark/Light Mode**, **Jest + Enzyme** for testing, **Custom Hooks**, and **Centralized HTTP services**.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🚀 Getting Started
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### 📦 Prerequisites
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- Node.js ≥ 16
+- Yarn or npm
+- Android Studio / Xcode
+- React Native CLI
+- Xcode CLI tools (for iOS)
+- CocoaPods (for iOS)
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
+## 🛠️ Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/dpk-developer/weather-app.git
+cd weather-app
+
+# Install dependencies
+yarn install
+
+# iOS only: Install CocoaPods
+cd ios && pod install && cd ..
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## 📲 Running the App
 
-### Android
+### ✅ Android
 
-```sh
-# Using npm
-npm run android
+Start Android emulator or connect a device, then run:
 
-# OR using Yarn
+```bash
 yarn android
 ```
 
-### iOS
+### 🍏 iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Start iOS simulator (or connect device), then run:
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
+```bash
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+> Ensure you've run `cd ios && pod install` at least once before launching on iOS.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+---
 
-## Step 3: Modify your app
+## 🔐 Environment Variables
 
-Now that you have successfully run the app, let's make changes!
+Create a `.env` file in the root directory and add your API key:
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+```env
+OPEN_WEATHER_API_KEY=your_api_key_here
+BASE_URL=https://api.openweathermap.org/data/2.5
+```
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+Use the variables in your app via a library `react-native-dotenv`.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+Example usage:
 
-## Congratulations! :tada:
+```ts
+import { OPEN_WEATHER_API_KEY } from '@env';
+```
 
-You've successfully run and modified your React Native App. :partying_face:
+---
 
-### Now what?
+## 🧪 Running Tests
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+### ▶️ Run All Tests
 
-# Troubleshooting
+```bash
+yarn test
+```
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+### 🛠️ Jest Configuration Highlights
 
-# Learn More
+- React Native modules in `node_modules` are included in transform
+- Setup file includes gesture handler and extended matchers
 
-To learn more about React Native, take a look at the following resources:
+Example `jest.config.js`:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+```js
+module.exports = {
+  preset: 'react-native',
+  setupFilesAfterEnv: ['<rootDir>/jest/setup.js'],
+  transformIgnorePatterns: [
+    'node_modules/(?!(@?react-native|@react-native|react-native|react-redux|@reduxjs/toolkit)/)',
+  ],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+};
+
+```
+
+---
+
+## 📦 Babel Configuration
+
+Example `babel.config.js`:
+
+```js
+module.exports = {
+  presets: ['module:@react-native/babel-preset'],
+  plugins: [['module:react-native-dotenv', { moduleName: '@env' }]],
+};
+
+```
+
+---
+
+## 🧩 Project Structure (MVVM)
+
+```
+src/
+├── models/              # ViewModel logic
+├── views/               # React Native screens & components
+├── redux/               # Redux Toolkit store & slices
+├── services/            # Centralized API calls
+├── hooks/               # Custom reusable hooks
+└── theme/               # Dark/Light mode themes
+```
+
+---
+
+## ✅ Features
+
+- 🌤️ Real-time weather info
+- 🔁 Redux Toolkit for state management
+- 🧠 MVVM architecture for clean separation
+- 🌓 Dark & Light mode toggle
+- 🔬 Unit tests with snapshot coverage
+- 📱 Fully responsive and cross-platform

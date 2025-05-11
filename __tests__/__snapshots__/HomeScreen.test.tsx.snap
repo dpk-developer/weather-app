@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen renders correctly with initial state 1`] = `
+<RCTSafeAreaView
+  style={
+    {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "#000000",
+      }
+    }
+  >
+    Loading UI...
+  </Text>
+</RCTSafeAreaView>
+`;

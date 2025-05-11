@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherCard renders weather info correctly 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "borderRadius": 8,
+        "elevation": 2,
+        "margin": 16,
+        "padding": 16,
+      },
+      {
+        "backgroundColor": "#fff",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 24,
+          "fontWeight": "bold",
+        },
+        {
+          "color": "#000",
+        },
+      ]
+    }
+  >
+    London
+  </Text>
+  <Image
+    source={
+      {
+        "uri": "https://openweathermap.org/img/wn/01d@2x.png",
+      }
+    }
+    style={
+      {
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+  <Text
+    style={
+      [
+        {
+          "fontSize": 32,
+          "fontWeight": "500",
+        },
+        {
+          "color": "#000",
+        },
+      ]
+    }
+  >
+    21
+    °C
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 18,
+          "fontWeight": "500",
+          "textTransform": "capitalize",
+        },
+        {
+          "color": "#000",
+        },
+      ]
+    }
+  >
+    clear sky
+  </Text>
+</View>
+`;
