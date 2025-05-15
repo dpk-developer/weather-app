@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 
-import WeatherCard from '../src/components/WeatherCard';
-import { WeatherResponse } from '../src/models/Weather';
+import WeatherCard from '@components/WeatherCard';
+import { WeatherResponse } from '@models/Weather';
 
-jest.mock('../src/hooks/useTheme', () => ({
+jest.mock('@hooks/useTheme', () => ({
   useTheme: () => ({
     theme: {
       text: '#000',

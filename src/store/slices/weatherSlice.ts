@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 
-import { WeatherResponse } from '../../models/Weather';
-import { fetchWeatherByCity } from '../../services/weatherService';
+import { WeatherResponse } from '@models/Weather';
+import { fetchWeatherByCity } from '@services/weatherService';
 
 export interface WeatherState {
   city: string;
@@ -24,8 +24,14 @@ export const fetchWeather = createAsyncThunk<
 >('weather/fetchWeather', async (city, { rejectWithValue }) => {
   try {
     return await fetchWeatherByCity(city);
-  } catch (err: any) {
-    return rejectWithValue(err.message);
+  } catch (err) {
+    let errorMessage = 'Unknown error';
+
+    if (err instanceof Error) {
+      errorMessage = err.message;
+    }
+
+    return rejectWithValue(errorMessage);
   }
 });
 

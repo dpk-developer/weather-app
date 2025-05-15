@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 
-import SearchBar from '../src/components/SearchBar';
+import SearchBar from '@components/SearchBar';
 
-jest.mock('../src/hooks/useTheme.ts', () => ({
+jest.mock('@hooks/useTheme.ts', () => ({
   useTheme: () => ({
     theme: {
       background: '#fff',

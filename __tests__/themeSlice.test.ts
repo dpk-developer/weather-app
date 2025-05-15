@@ -1,4 +1,4 @@
-import themeReducer, { setTheme } from '../src/store/slices/themeSlice';
+import themeReducer, { setTheme } from '@store/slices/themeSlice';
 
 describe('themeSlice', () => {
   it('should return initial state', () => {

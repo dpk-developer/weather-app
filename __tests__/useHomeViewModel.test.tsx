@@ -3,15 +3,15 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { renderHook } from '@testing-library/react-hooks';
 
-import weatherReducer from '../src/store/slices/weatherSlice';
-import { useHomeViewModel } from '../src/viewmodels/useHomeViewModel';
+import weatherReducer from '@store/slices/weatherSlice';
+import { useHomeViewModel } from '@viewModels/useHomeViewModel';
 
-jest.mock('../src/utils/storage.ts', () => ({
+jest.mock('@utils/storage.ts', () => ({
   getLastCity: () => Promise.resolve('Berlin'),
   saveLastCity: jest.fn(),
 }));
 
-jest.mock('../src/services/weatherService.ts', () => ({
+jest.mock('@services/weatherService.ts', () => ({
   fetchWeatherByCity: () =>
     Promise.resolve({
       name: 'Berlin',

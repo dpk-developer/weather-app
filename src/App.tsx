@@ -11,13 +11,13 @@ import {
 
 import { Provider, useDispatch, useSelector } from 'react-redux';
 
-import dark from './themes/dark';
-import light from './themes/light';
-import { getTheme } from './utils/storage';
-import { setTheme } from './store/slices/themeSlice';
-import { store, RootState, AppDispatch } from './store';
+import dark from '@themes/dark';
+import light from '@themes/light';
+import { getTheme } from '@utils/storage';
+import { setTheme } from '@store/slices/themeSlice';
+import { store, RootState, AppDispatch } from '@store/index';
 
-const HomeScreen = React.lazy(() => import('./screens/Homescreen'));
+const HomeScreen = React.lazy(() => import('@screens/Homescreen'));
 
 const ThemeToggle = memo(
   ({
@@ -65,7 +65,7 @@ const AppContent = () => {
       />
       <ThemeToggle themeMode={themeMode} toggle={toggle} theme={theme} />
       <Suspense
-        fallback={<Text style={{ color: theme.text }}>Loading...</Text>}>
+        fallback={<Text style={{ color: theme.text, textAlign: 'center' }}>Loading...</Text>}>
         <HomeScreen />
       </Suspense>
     </SafeAreaView>
@@ -83,7 +83,7 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 24
+    paddingVertical: 24,
   },
   toggleContainer: {
     flexDirection: 'row',
@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     paddingHorizontal: 16,
     paddingVertical: 10,
+    marginTop: 20,
   },
   toggleText: {
     marginRight: 10,

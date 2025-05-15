@@ -13,6 +13,7 @@ exports[`HomeScreen renders correctly with initial state 1`] = `
     style={
       {
         "color": "#000000",
+        "textAlign": "center",
       }
     }
   >

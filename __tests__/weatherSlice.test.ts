@@ -1,8 +1,8 @@
 import weatherReducer, {
   setCity,
   fetchWeather,
-} from '../src/store/slices/weatherSlice';
-import { WeatherResponse } from '../src/models/Weather';
+} from '@store/slices/weatherSlice';
+import { WeatherResponse } from '@models/Weather';
 
 describe('weatherSlice', () => {
   it('should handle initial state', () => {

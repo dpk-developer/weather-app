@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-import { useTheme } from '../hooks/useTheme';
-import { WeatherResponse } from '../models/Weather.ts';
+import { useTheme } from '@hooks/useTheme';
+import { WeatherResponse } from '@models/Weather.ts';
 
 interface Props {
   weather: WeatherResponse;

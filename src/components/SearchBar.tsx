@@ -7,7 +7,7 @@ import {
   Image,
 } from 'react-native';
 
-import { useTheme } from '../hooks/useTheme';
+import { useTheme } from '@hooks/useTheme';
 
 interface Props {
   city: string;
@@ -15,7 +15,7 @@ interface Props {
   onSubmit: () => void;
 }
 
-const IC_SEARCH = require('../assets/icons/search.png');
+const IC_SEARCH = require('@assets/icons/search.png');
 
 const SearchBar = ({ city, onChange, onSubmit }: Props) => {
   const { theme } = useTheme();

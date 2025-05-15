@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { getTheme, saveTheme } from '../../utils/storage';
+import { saveTheme } from '@utils/storage';
 
 export type ThemeMode = 'light' | 'dark';
 

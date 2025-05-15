@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { RootState, AppDispatch } from '../store/index.ts';
-import { fetchWeather } from '../store/slices/weatherSlice.ts';
-import { saveLastCity, getLastCity } from '../utils/storage.ts';
+import { RootState, AppDispatch } from '@store/index.ts';
+import { fetchWeather } from '@store/slices/weatherSlice.ts';
+import { saveLastCity, getLastCity } from '@utils/storage.ts';
 
 export const useHomeViewModel = () => {
   const dispatch = useDispatch<AppDispatch>();

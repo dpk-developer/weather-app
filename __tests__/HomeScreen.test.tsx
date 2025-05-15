@@ -4,11 +4,11 @@ import { render } from '@testing-library/react-native';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 
-import themeReducer, { ThemeState } from '../src/store/slices/themeSlice';
-import weatherReducer, { WeatherState } from '../src/store/slices/weatherSlice';
+import themeReducer, { ThemeState } from '@store/slices/themeSlice';
+import weatherReducer, { WeatherState } from '@store/slices/weatherSlice';
 
-jest.mock('../src/components/SearchBar.tsx', () => () => <></>);
-jest.mock('../src/components/WeatherCard.tsx', () => () => <></>);
+jest.mock('@components/SearchBar.tsx', () => () => <></>);
+jest.mock('@components/WeatherCard.tsx', () => () => <></>);
 
 describe('HomeScreen', () => {
   it('renders correctly with initial state', () => {
@@ -33,7 +33,7 @@ describe('HomeScreen', () => {
       },
     });
 
-    const HomeScreen = require('../src/screens/Homescreen').default;
+    const HomeScreen = require('@screens/Homescreen').default;
 
     const { toJSON } = render(
       <Provider store={store}>
